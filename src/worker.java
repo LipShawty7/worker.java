@@ -1,4 +1,4 @@
-public class Worker {
+public class worker {
 
     private static final String API_URL = System.getenv("API_URL") != null 
         ? System.getenv("API_URL") 
@@ -17,7 +17,7 @@ public class Worker {
 
         while (true) {
             try {
-                Task task = tarefa.getNextTask()(API_URL, QUEUE);
+                Task task = tarefa.getNextTask(API_URL, QUEUE);
 
                 if (task != null) {
                     System.out.println("Tarefa recebida: " + task.getId() + " | Tentativas: " + task.getAttempts());
